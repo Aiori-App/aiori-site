@@ -27,7 +27,7 @@ jobs:
       # 3) Now gsutil will see your ADC and have permission
       - name: Sync files to GCS
         run: |
-          gsutil -m rsync -r -x '^\.github/.*$' . gs://aiori-website
+          gsutil -m rsync -r -d -x '^\.github/.*$|^\.idea/.*$|^README\.md$' . gs://aiori-website
 
       # 4) Invalidate CDN cache
       - name: Invalidate CDN cache
