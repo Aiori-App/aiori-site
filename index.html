@@ -3,71 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aiori</title>
+  <title>AIORI | AI vs Human Behavioral Arena</title>
+  <link rel="icon" href="Resources/aiori-logo-v2.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-  <div class="left">
-    <!-- Replace with your main logo -->
-    <img src="../Resources/aiori-logo.png" alt="Aiori Logo">
-  </div>
-  <div class="right">
-    <img src="../Resources/brain-icon.png" alt="Aiori Icon" class="icon">
-    <div id="form-container">
-      <h2>Sign up to be notified on release</h2>
+  <!-- Background images -->
+  <div class="bg-left"></div>
+  <div class="bg-right"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Ambient glow effects -->
+  <div class="glow glow-cyan"></div>
+  <div class="glow glow-pink"></div>
+
+  <!-- Circuit decoration lines -->
+  <div class="circuit-line line-1"></div>
+  <div class="circuit-line line-2"></div>
+  <div class="circuit-line line-3"></div>
+  <div class="circuit-line line-4"></div>
+  <div class="circuit-line line-5"></div>
+  <div class="circuit-line line-6"></div>
+
+  <!-- Main content -->
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo-wrapper">
+      <img src="Resources/aiori-logo-v2.png" alt="AIORI Logo" class="logo">
+    </div>
+
+    <!-- Subheader -->
+    <h1 class="subheader">AI | HUMAN <span>BEHAVIORAL ARENA</span></h1>
+
+    <!-- Form container -->
+    <div id="form-container" class="form-card">
+      <h2>Get Notified on Launch</h2>
+      <p class="subtitle">Be among the first in the arena</p>
+
       <form id="notify-form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <button type="submit">Notify Me</button>
+        <div class="input-group">
+          <input type="text" name="name" placeholder="Name" required class="input-neon">
+          <div class="input-glow"></div>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Email" required class="input-neon">
+          <div class="input-glow"></div>
+        </div>
+        <div class="input-group">
+          <input type="tel" name="phone" placeholder="Phone Number" required class="input-neon">
+          <div class="input-glow"></div>
+        </div>
+        <button type="submit" class="btn-neon">
+          <span class="btn-corners"></span>
+          Notify Me
+        </button>
       </form>
+
+      <!-- Decorative nodes -->
+      <div class="node-decoration">
+        <span class="node-dot"></span>
+        <span class="node-line"></span>
+        <span class="node-dot"></span>
+        <span class="node-line short"></span>
+        <span class="node-ring"></span>
+      </div>
     </div>
-    <!-- Success message container -->
-    <div id="success-message" class="hidden">
-      <div class="checkmark">✓</div>
-      <p>Thanks for your submission!</p>
+
+    <!-- Success message -->
+    <div id="success-message" class="form-card hidden">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>You're on the list!</h2>
+      <p class="subtitle">We'll notify you when AIORI launches</p>
+
+      <!-- Decorative nodes -->
+      <div class="node-decoration">
+        <span class="node-dot"></span>
+        <span class="node-line"></span>
+        <span class="node-dot"></span>
+        <span class="node-line short"></span>
+        <span class="node-ring"></span>
+      </div>
     </div>
   </div>
-</div>
-<!-- Script -->
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const formContainer = document.getElementById('form-container');
-        const form = document.getElementById('notify-form');
-        const successMessage = document.getElementById('success-message');
+  document.addEventListener('DOMContentLoaded', () => {
+    const formContainer = document.getElementById('form-container');
+    const form = document.getElementById('notify-form');
+    const successMessage = document.getElementById('success-message');
 
-        form.addEventListener('submit', async e => {
-            e.preventDefault();
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
 
-            const payload = {
-                name: form.name.value.trim() || null,
-                email: form.email.value.trim(),
-                phone: form.phone.value.trim() || null
-            };
+      const payload = {
+        name: form.name.value.trim() || null,
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim() || null
+      };
 
-            try {
-                const res = await fetch('https://aiori-api-465948962485.us-central1.run.app/api/aiori/inquiry-request', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (res.status === 201) {
-                    // Hide form and show success
-                    formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-                } else {
-                    console.error('Server error:', await res.text());
-                    alert('Oops—something went wrong.');
-                }
-            } catch (err) {
-                console.error('Network error:', err);
-                alert('Network error. Please try again.');
-            }
+      try {
+        const res = await fetch('https://aiori-api-465948962485.us-central1.run.app/api/aiori/inquiry-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
+
+        if (res.status === 201) {
+          formContainer.classList.add('hidden');
+          successMessage.classList.remove('hidden');
+        } else {
+          console.error('Server error:', await res.text());
+          alert('Oops—something went wrong.');
+        }
+      } catch (err) {
+        console.error('Network error:', err);
+        alert('Network error. Please try again.');
+      }
     });
+  });
 </script>
 </body>
 </html>
-
