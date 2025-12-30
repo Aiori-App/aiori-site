@@ -480,19 +480,12 @@ form {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .bg-left, .bg-right {
-    width: 100%;
-  }
-
   .bg-left {
-    height: 50%;
-    bottom: 50%;
-    top: auto;
+    display: none;
   }
 
   .bg-right {
-    height: 50%;
-    top: 50%;
+    width: 100%;
   }
 
   .logo {
@@ -511,6 +504,10 @@ form {
   .glow-cyan, .glow-pink {
     width: 250px;
     height: 250px;
+  }
+
+  .circuit-line {
+    display: none;
   }
 }
 
