@@ -1,0 +1,154 @@
+/* AIORI Legal Pages (Privacy, Terms) */
+
+html, body.legal-body {
+  height: auto;
+  overflow: auto;
+}
+
+body.legal-body {
+  min-height: 100vh;
+  background-color: var(--void);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
+}
+
+.legal-container {
+  position: relative;
+  z-index: 10;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: text-shadow 0.2s ease;
+}
+
+.legal-back:hover {
+  text-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.legal-header {
+  text-align: center;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.15);
+}
+
+.legal-logo {
+  width: 110px;
+  height: auto;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.3));
+}
+
+.legal-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #00F5FF 0%, #39FF14 50%, #FF2D92 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.legal-meta {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.05em;
+}
+
+.legal-section {
+  margin-bottom: 2.25rem;
+}
+
+.legal-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
+
+.legal-section h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-section p,
+.legal-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+.legal-section ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-section li {
+  margin-bottom: 0.35rem;
+}
+
+.legal-section strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.legal-link,
+.legal-section a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+  transition: border-color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.legal-link:hover,
+.legal-section a:hover {
+  border-bottom-color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
+}
+
+.legal-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 245, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 640px) {
+  .legal-container {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .legal-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .legal-section h2 {
+    font-size: 1rem;
+  }
+}
